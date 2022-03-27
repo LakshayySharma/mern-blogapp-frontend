@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { loadUser } from "../actions/user";
+// import { useDispatch } from "react-redux";
 const ProfilePage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   // dispatch(loadUser(localStorage.getItem("token")));
   const user = useSelector((state) => state.user);

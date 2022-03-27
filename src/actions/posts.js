@@ -61,6 +61,7 @@ export const deletePost = (id) => async (dispatch) => {
         },
       }
     );
+    console.log(res);
     dispatch({
       type: "POST_DELETED",
       payload: id,

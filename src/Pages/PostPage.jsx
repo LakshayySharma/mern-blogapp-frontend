@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import { deletePost, loadPost } from "../actions/posts";
 import { useNavigate } from "react-router-dom";
 import { commentPost } from "../actions/posts";
-import { loadUser } from "../actions/user";
 const PostPage = () => {
   const params = useParams();
   const dispatch = useDispatch();
