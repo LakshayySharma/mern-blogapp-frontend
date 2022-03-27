@@ -9,7 +9,7 @@ const ProfilePage = () => {
     return () => {
       dispatch(loadUser(localStorage.getItem("token")));
     };
-  }, dispatch);
+  }, [dispatch]);
   // const dispatch = useDispatch();
   const navigate = useNavigate();
   // dispatch(loadUser(localStorage.getItem("token")));
