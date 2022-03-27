@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllPosts } from "../actions/posts";
+import { loadUser } from "../actions/user";
 import Post from "../Components/Post";
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const HomePage = () => {
   console.log(posts);
   useEffect(() => {
     dispatch(getAllPosts());
+    dispatch(loadUser(localStorage.getItem("token")));
   }, [dispatch]);
   return (
     <div>
