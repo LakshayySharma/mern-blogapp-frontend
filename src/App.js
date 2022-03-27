@@ -94,6 +94,7 @@ function App() {
           element={<PrivateRoute component={CreatePostPage} />}
         />
         <Route path="/editor" component={EditorComponent} />
+        <Route path="/*" element={<h1>Not found</h1>} />
       </Routes>
     </div>
   );
