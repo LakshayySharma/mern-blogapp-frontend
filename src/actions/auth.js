@@ -36,6 +36,7 @@ export const login = (user) => async (dispatch) => {
     });
   } catch (error) {
     console.log(error.response.data);
+    alert(error.response.data.error[0].msg);
   }
 };
 
