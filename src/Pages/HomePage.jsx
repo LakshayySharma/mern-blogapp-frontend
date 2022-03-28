@@ -4,16 +4,20 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllPosts } from "../actions/posts";
-import { loadUser } from "../actions/user";
+// import { loadUser } from "../actions/user";
 import Post from "../Components/Post";
 const HomePage = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.post.posts);
+  const userLoading = useSelector((state) => state.user.loading);
+  const postLoading = useSelector((state) => state.post.loading);
   console.log(posts);
   useEffect(() => {
     dispatch(getAllPosts());
-    dispatch(loadUser(localStorage.getItem("token")));
   }, [dispatch]);
+  if (userLoading || postLoading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div>
       <div>
